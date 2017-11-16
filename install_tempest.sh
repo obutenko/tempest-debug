@@ -1,5 +1,6 @@
 #!/bin/bash -xe
 pip install tempest==16.0.0
+source /home/rally/keystonercv3
 rally-manage db recreate
 rally deployment create --fromenv --name=tempest
 rally verify create-verifier --type tempest \
