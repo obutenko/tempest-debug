@@ -8,8 +8,8 @@ function prepare {
 
 function install_docker_and_run {
     apt-get install -y docker.io
-    docker pull rallyforge/rally:0.9.0
-    image_id=$(docker images | grep 0.1.0| awk '{print $3}')
+    docker pull rallyforge/rally:0.9.1
+    image_id=$(docker images | grep 0.9.1| awk '{print $3}')
     docker run --net host -v /home/:/home/rally -v /etc/ssl/certs/:/etc/ssl/certs/ -tid -u root $image_id
     docker_id=$(docker ps | grep $image_id | awk '{print $1}'| head -1)
 }
