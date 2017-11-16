@@ -1,9 +1,9 @@
 #!/bin/bash -xe
 
 function prepare {
-    cp /root/kestonercv3 /home
+    cp /root/keystonercv3 /home
     cp install_tempest.sh /home
-    cp config_file /home
+    cp tempest_conf /home
 }
 
 function install_docker_and_run {

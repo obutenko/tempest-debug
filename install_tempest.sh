@@ -1,5 +1,5 @@
 #!/bin/bash -xe
-pip install tempest=16.0.0
+pip install tempest==16.0.0
 rally-manage db recreate
 rally deployment create --fromenv --name=tempest
 rally verify create-verifier --type tempest \
