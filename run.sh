@@ -11,7 +11,7 @@ function install_docker_and_run {
     apt-get install -y docker.io
     docker pull xrally/xrally-openstack:0.10.1
     image_id=$(docker images | grep 0.10.1| awk '{print $3}')
-    docker run --net host -v /root/mount:/home/rally -v /etc/ssl/certs/:/etc/ssl/certs/ -tid -u root $image_id
+    docker run --net host -v /root/mount:/home/rally -v /etc/ssl/certs/:/etc/ssl/certs/ -tid -u root --entrypoint /bin/bash $image_id
     docker_id=$(docker ps | grep $image_id | awk '{print $1}'| head -1)
 }
 
