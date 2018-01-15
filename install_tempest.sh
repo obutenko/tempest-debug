@@ -9,3 +9,6 @@ rally verify create-verifier --type tempest \
     --system-wide
 rally verify configure-verifier --extend /home/rally/tempest_conf
 rally verify configure-verifier --show
+git clone https://github.com/openstack/heat-tempest-plugin
+pip intall -r /home/rally/heat-tempest-plugin/test-requirements.txt
+rally verify add-verifier-ext --source /home/rally/heat-tempest-plugin
